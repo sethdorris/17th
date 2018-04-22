@@ -53,8 +53,10 @@ console.log("IsDevelopment", IsDevelopment)
 app.use(bodyParser.json());
 app.use("../dist", express.static(path.join(__dirname, "..", "dist")));
 
+console.log("dir", __dirname)
+
 app.get('/', function (req, res) {
-  res.sendFile("./dist/index.html")
+  res.sendFile(path.join(__dirname, "dist/", "index.html"))
 })
 
 theServer.listen(process.env.PORT || 3000);
