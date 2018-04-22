@@ -51,7 +51,7 @@ console.log("IsDevelopment", IsDevelopment)
 //   saveUninitialized: false
 // }))
 app.use(bodyParser.json());
-app.use("../dist", express.static(path.join(__dirname, "..", "dist")));
+app.use("/dist", express.static(path.join(__dirname, "..", "dist")));
 
 console.log("dir", __dirname)
 
