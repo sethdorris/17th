@@ -14,16 +14,16 @@ var app = express();
 // var CronJob = require("cron").CronJob;
 
 
-if (IsDevelopment) {
-  var https = require("https");
-  var theServer = https.createServer({
-      key: fs.readFileSync(path.join(__dirname, "./key.pem")),
-      cert: fs.readFileSync(path.join(__dirname, "./cert.pem"))
-     }, app);
-} else {
+// if (IsDevelopment) {
+//   var https = require("https");
+//   var theServer = https.createServer({
+//       key: fs.readFileSync(path.join(__dirname, "./key.pem")),
+//       cert: fs.readFileSync(path.join(__dirname, "./cert.pem"))
+//      }, app);
+// } else {
   var http = require("http");
   var theServer = http.createServer(app);
-}
+// }
 
 // var dbConnectionConfig = require('./server-config');
 
