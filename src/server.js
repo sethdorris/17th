@@ -54,7 +54,7 @@ app.use(bodyParser.json());
 app.use("../dist", express.static(path.join(__dirname, "..", "dist")));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, "../", "index.html"))
+  res.sendFile("./dist/index.html")
 })
 
 theServer.listen(process.env.PORT || 3000);
