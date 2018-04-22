@@ -43,13 +43,13 @@ console.log("IsDevelopment", IsDevelopment)
 //   knex: knex
 // })
 
-app.use(session({
-  // store: store,
-  // secret: config.sessions.secret,
-  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000, secure: IsDevelopment },
-  resave: false,
-  saveUninitialized: false
-}))
+// app.use(session({
+//   // store: store,
+//   // secret: config.sessions.secret,
+//   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000, secure: IsDevelopment },
+//   resave: false,
+//   saveUninitialized: false
+// }))
 app.use(bodyParser.json());
 app.use("../dist", express.static(path.join(__dirname, "..", "dist")));
 
