@@ -30,6 +30,85 @@ relevant Service.</p>
                 <input type="text" />
               </div>
             </div>
+            <div class="half-input">
+              <div class="flex-basis-50 middle-border border-btm">
+                <label>STEAM URL</label>
+                <input type="text" />
+              </div>
+              <div class="flex-basis-50 border-btm">
+                <label>GAME <span>(Currently only supporting Day of Infamy)</span></label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="title-block">
+              <h5>B. ENLISTEE/REENLISTEE INTEREST AND SKILL DATA</h5>
+            </div>
+            <div class="half-input">
+              <div class="flex-basis-50 middle-border">
+                <label>WHY DO YOU WANT TO JOIN</label>
+                <input type="text" />
+              </div>
+              <div class="flex-basis-50">
+                <label>RECRUITED BY</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="half-input">
+              <div class="flex-basis-50 middle-border">
+                <label>DO YOU HAVE MILSIM EXPERIENCE</label>
+                <input type="text" />
+              </div>
+              <div class="flex-basis-50">
+                <label>PREVIOUS UNITS</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="half-input">
+              <div class="flex-basis-50 middle-border">
+                <label>WHAT ARE YOUR STRENGTHS/SKILLS IN-GAME</label>
+                <input type="text" />
+              </div>
+              <div class="flex-basis-50">
+                <label>IN WHAT WAYS CAN YOU HELP THE UNIT</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="half-input">
+              <div class="flex-basis-50 middle-border">
+                <label>DO YOU HAVE A MICROPHONE</label>
+                <input type="text" />
+              </div>
+              <div class="flex-basis-50">
+                <label>CAN YOU ATTEND A WEEKLY EVENT</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="half-input">
+              <div class="comments border-btm">
+                <label>COMMENTS</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="title-block">
+              <h5>C. AGREEMENTS</h5>
+            </div>
+            <div class="border-btm">
+              <p><strong>1. </strong>I am enlisting in the 17th Airborne Division realism unit on this date <strong> {{this.date}} </strong> for a period of <strong>4</strong> weeks beginning in the pay-grade of <strong>E1 / PV1</strong>
+                unless authorized by the commander upon approval of this form.  I must serve a total of <strong>four (4)</strong> weeks, unless I am sooner discharged or otherwise extended by the appropriate
+                authority.</p>
+                <p><strong> 2. </strong>I understand that the failure to serve honorably during this initial enlistment period may result in not recieving an honorable discharge. A discharge of <strong>Other-Than-Honorable</strong> will result
+                in an immediate disqualification for reenlistment for a period of <strong>2x</strong> the length of unfulfilled enlistment requirement. If I receive a <strong>Dishonorable Discharge</strong> I may be barred from future reenlistment.
+                The type of discharge granted for unfulfilled commitment will be decided by a discharge board and will be based upon my quality of service.</p>
+            </div>
+            <div class="title-block">
+              <h5>D. CERTIFICATION AND ACCEPTANCE</h5>
+            </div>
+            <div>
+              <p> My acceptance for enlistment is based on the information I have given in my application for enlistment. If any of that
+information is false or incorrect, this enlistment may be voided or terminated administratively by the Commander or his designated representative(s).</p>
+              <label>SIGNATURE</label>
+              <input type="text" />
+            </div>
           </div>
         </div>
       </div>
@@ -56,6 +135,12 @@ export default {
       comments: ''
     }
   },
+  computed: {
+    date: function() {
+      var now = new Date();
+      return now.toDateString();
+    }
+  },
   methods: {
 
   }
@@ -77,7 +162,9 @@ export default {
     margin-bottom: 15px;
     display: flex;
   }
-
+  div.comments {
+    width: 100%;
+  }
   .ddform {
     border: 1px solid black;
     margin: 20px;
@@ -99,6 +186,12 @@ export default {
   }
   .flex-basis-50 {
     flex-basis: 50%;
+  }
+  .flex-basis-33 {
+    flex-basis: 33%;
+  }
+  .border-btm {
+    border-bottom: 1px solid black;
   }
   .middle-border {
     border-right: 1px solid black;
@@ -122,5 +215,8 @@ export default {
   label {
     display: block;
     margin: 0;
+  }
+  label > span {
+    font-weight: 500;
   }
 </style>
