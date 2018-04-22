@@ -44,7 +44,7 @@ console.log("IsDevelopment", IsDevelopment)
 // })
 
 app.use(session({
-  store: store,
+  // store: store,
   // secret: config.sessions.secret,
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000, secure: IsDevelopment },
   resave: false,
