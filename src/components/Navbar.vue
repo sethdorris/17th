@@ -5,7 +5,7 @@
        <router-link to="#">About Us</router-link>
        <router-link to="/enlist" exact>Enlist</router-link>
        <router-link to="#">Forums</router-link>
-       <router-link to="#">Roster</router-link>
+       <router-link to="/roster">Roster</router-link>
      </ul>
    </nav>
 </template>
