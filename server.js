@@ -54,9 +54,7 @@ app.get('/', function (req, res) {
 
 app.get('/roster', async function (req, res) {
   var roster = await pool.query(api.getRoster);
-  console.log("roster", roster)
   if (roster.rowCount > 0) {
-    console.log("not hit")
     return res.json(roster.rows);
   }
   return res.status(500).send("Server Error");
