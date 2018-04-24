@@ -16,20 +16,18 @@ var http = require("http");
 var theServer = http.createServer(app);
 // }
 
-const pool = new Pool(config.development);
-
 // var dbConnectionConfig = require('./server-config');
 
 
 console.log("Development Environment: ", process.env.NODE_ENV)
-console.log("IsDevelopment", IsDevelopment)
 
-// var dbConnection = IsDevelopment ? dbConnectionConfig.development : dbConnectionConfig.production;
+var dbConnection = IsDevelopment ? config.development : config.production;
+const pool = new Pool(config.development);
 // console.log("Database Connection", dbConnection)
 
 var knex = Knex({
   client: 'pg',
-  connection: config.development
+  connection: dbConnection
 })
 
 var store = new KnexSessionStore({
