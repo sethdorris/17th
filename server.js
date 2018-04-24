@@ -22,7 +22,7 @@ var theServer = http.createServer(app);
 console.log("Development Environment: ", process.env.NODE_ENV)
 
 var dbConnection = IsDevelopment ? config.development : config.production;
-const pool = new Pool(config.development);
+const pool = new Pool(dbConnection);
 // console.log("Database Connection", dbConnection)
 
 var knex = Knex({
