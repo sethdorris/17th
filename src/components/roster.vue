@@ -11,49 +11,49 @@
     <div class="style-line"></div>
     <h4 class="ta-c">Company Command Group</h4>
     <div class="roster-box" v-for="command in CommandGroup">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">1st Platoon Command Group</h4>
     <div class="roster-box" v-for="command in FirstPlatoonCommand">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">Alpha Squad</h4>
     <div class="roster-box" v-for="command in FPAlphaSquad">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">Bravo Squad</h4>
     <div class="roster-box" v-for="command in FPBravoSquad">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width + '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">2nd Platoon Command Group</h4>
     <div class="roster-box" v-for="command in SecondPlatoonCommand">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">Alpha Squad</h4>
     <div class="roster-box" v-for="command in SPAlphaSquad">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
     <h4 class="ta-c">Bravo Squad</h4>
     <div class="roster-box" v-for="command in SPBravoSquad">
-      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width"/></div>
+      <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
@@ -72,17 +72,18 @@ export default {
   },
   computed: {
     CommandGroup: function() {
-      return this.roster.filter(member => {
+      var hq =  this.roster.filter(member => {
         return member.platoon == "HQ"
-      }).sort((a, b) => {
+      })
+      return hq.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
     FirstPlatoonCommand: function() {
-      return this.roster.filter(member => {
-        console.log(member)
+      var hq =  this.roster.filter(member => {
         return member.platoon == "1" && member.squad == "HQ"
-      }).sort((a, b) => {
+      })
+      return hq.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
@@ -94,23 +95,26 @@ export default {
       });
     },
     FPBravoSquad: function() {
-      return this.roster.filter(member => {
+      var bravo = this.roster.filter(member => {
         return member.platoon == "1" && member.squad == "Bravo"
-      }).sort((a, b) => {
+      })
+      return bravo.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
     SecondPlatoonCommand: function() {
-      return this.roster.filter(member => {
+      var hq = this.roster.filter(member => {
         return member.platoon == "2" && member.squad == "HQ"
-      }).sort((a, b) => {
+      })
+      return hq.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
     SPAlphaSquad: function() {
-      return this.roster.filter(member => {
+      var alpha = this.roster.filter(member => {
         return member.platoon == "2" && member.squad == "Alpha"
-      }).sort((a, b) => {
+      })
+      return alpha.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
