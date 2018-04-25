@@ -16,20 +16,18 @@
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
-    <h4 class="ta-c">1st Platoon Command Group</h4>
+    <h4 class="ta-c">1st Platoon</h4>
     <div class="roster-box" v-for="command in FirstPlatoonCommand">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
-    <div class="style-line"></div>
     <h4 class="ta-c">Alpha Squad</h4>
     <div class="roster-box" v-for="command in FPAlphaSquad">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
-    <div class="style-line"></div>
     <h4 class="ta-c">Bravo Squad</h4>
     <div class="roster-box" v-for="command in FPBravoSquad">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width + '%'"/></div>
@@ -37,20 +35,18 @@
       <div class="fb-40">{{command.role}}</div>
     </div>
     <div class="style-line"></div>
-    <h4 class="ta-c">2nd Platoon Command Group</h4>
+    <h4 class="ta-c">2nd Platoon</h4>
     <div class="roster-box" v-for="command in SecondPlatoonCommand">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
-    <div class="style-line"></div>
     <h4 class="ta-c">Alpha Squad</h4>
     <div class="roster-box" v-for="command in SPAlphaSquad">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
       <div class="fb-40">{{command.steamname}}</div>
       <div class="fb-40">{{command.role}}</div>
     </div>
-    <div class="style-line"></div>
     <h4 class="ta-c">Bravo Squad</h4>
     <div class="roster-box" v-for="command in SPBravoSquad">
       <div class="fb-20 ta-c"><img :src= "command.image_url" v-bind:width="command.width+ '%'"/></div>
