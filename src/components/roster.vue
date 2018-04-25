@@ -72,16 +72,13 @@ export default {
   },
   computed: {
     CommandGroup: function() {
-      console.log("Command")
       return this.roster.filter(member => {
-        console.log(member)
         return member.platoon == "HQ"
       }).sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
     FirstPlatoonCommand: function() {
-      console.log("Command2")
       return this.roster.filter(member => {
         console.log(member)
         return member.platoon == "1" && member.squad == "HQ"
@@ -90,9 +87,7 @@ export default {
       });
     },
     FPAlphaSquad: function() {
-      console.log("Command3")
       return this.roster.filter(member => {
-        console.log(member)
         return member.platoon == "1" && member.squad == "Alpha"
       }).sort((a, b) => {
         return b.rankid - a.rankid;
@@ -100,7 +95,6 @@ export default {
     },
     FPBravoSquad: function() {
       return this.roster.filter(member => {
-        console.log(member)
         return member.platoon == "1" && member.squad == "Bravo"
       }).sort((a, b) => {
         return b.rankid - a.rankid;
@@ -108,7 +102,6 @@ export default {
     },
     SecondPlatoonCommand: function() {
       return this.roster.filter(member => {
-        console.log(member)
         return member.platoon == "2" && member.squad == "HQ"
       }).sort((a, b) => {
         return b.rankid - a.rankid;
@@ -116,17 +109,16 @@ export default {
     },
     SPAlphaSquad: function() {
       return this.roster.filter(member => {
-        console.log(member)
         return member.platoon == "2" && member.squad == "Alpha"
       }).sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
     SPBravoSquad: function() {
-      return this.roster.filter(member => {
-        console.log(member)
+      var bravo = this.roster.filter(member => {
         return member.platoon == "2" && member.squad == "Bravo"
-      }).sort((a, b) => {
+      });
+      return bravo.sort((a, b) => {
         return b.rankid - a.rankid;
       });
     },
